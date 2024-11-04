@@ -10,7 +10,7 @@ int no_generation_parallel;
 float **dist_matrix_parallel;
 float crossover_threshold_parallel = 0.7;
 
-float mutation_probability_parallel = 0.1;       // Xác suất để đột biến xảy ra
+float mutation_probability_parallel = 0.05;       // Xác suất để đột biến xảy ra
 float swap_probability_parallel = 0.4;           // Xác suất chọn `swap_mutation_parallel`
 float insert_probability_parallel = 0.3;         // Xác suất chọn `insert_mutation_parallel`
 float reverse_probability_parallel = 0.3;        // Xác suất chọn `reverse_mutation_parallel`
@@ -210,8 +210,8 @@ void apply_mutation_parallel(Chromosome *chrom, int length) {
 float tsp_ga_parallel(float **dist_matrix, int size, int **best_path) {
     chromo_length_parallel = size;
     dist_matrix_parallel = dist_matrix;
-    popl_size_parallel = 200;
-    no_generation_parallel = 500;
+    popl_size_parallel = size;
+    no_generation_parallel = 1000;
 
     init_population_parallel(size);
 

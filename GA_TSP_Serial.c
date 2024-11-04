@@ -9,7 +9,7 @@ int no_generation_serial;
 float **dist_matrix_serial;
 float crossover_threshold_serial = 0.8;  // Ngưỡng lai ghép
 
-float mutation_probability_serial = 0.1;       // Xác suất để đột biến xảy ra
+float mutation_probability_serial = 0.05;       // Xác suất để đột biến xảy ra
 float swap_probability_serial = 0.4;           // Xác suất chọn `swap_mutation`
 float insert_probability_serial = 0.3;         // Xác suất chọn `insert_mutation`
 float reverse_probability_serial = 0.3;        // Xác suất chọn `reverse_mutation`
@@ -192,8 +192,8 @@ void apply_mutation_serial(Chromosome *chrom, int length) {
 float tsp_ga_serial(float **dist_matrix, int size, int **best_path) {
     chromo_length_serial = size;
     dist_matrix_serial = dist_matrix;
-    popl_size_serial = 200;
-    no_generation_serial = 500;
+    popl_size_serial = size;
+    no_generation_serial = 1000;
 
     init_population_serial(size);
 
@@ -267,10 +267,10 @@ float tsp_ga_serial(float **dist_matrix, int size, int **best_path) {
 
     free(best_overall_genes);
     for (int i = 0; i < popl_size_serial; i++) {
-        free(population_serial[i].genes);
+        free(population_serial[i].genes);  
     }
     free(population_serial);
 
-    printf("Best fitness: %f\n", best_overall_fitness);
+    // printf("Best fitness: %f\n", best_overall_fitness);
     return best_cost;
 }
