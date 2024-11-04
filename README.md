@@ -1,6 +1,6 @@
 # TSP Brute Force và Genetic Algorithm
 
-Đây là dự án sử dụng phương pháp brute force và thuật toán di truyền (Genetic Algorithm) để giải bài toán TSP (Travelling Salesman Problem) theo tuần tự và song song với OpenMP.
+Đây là dự án sử dụng phương pháp brute force, thuật toán di truyền (Genetic Algorithm), và thuật toán bầy kiến để giải bài toán TSP (Travelling Salesman Problem) theo tuần tự và song song với OpenMP.
 
 ## Hướng dẫn chạy code trên terminal
 
